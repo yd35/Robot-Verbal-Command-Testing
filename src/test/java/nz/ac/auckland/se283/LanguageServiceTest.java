@@ -13,6 +13,7 @@ public class LanguageServiceTest {
   private static final String BLANK_STRING_ONE_SPACE = " ";
   public static final String ENGLISH = "English";
   public static final String MAORI = "Maori";
+  public static final String UNREGISTERED_LANGUAGE = "Mandarin";
 
   private LanguageService ls;
   private SpeechRecognizer recognizer;
@@ -168,5 +169,15 @@ public class LanguageServiceTest {
     // Assert
     assertEquals("kia ora", result);
     Mockito.verify(recognizer).recognize(MAORI);
+  }
+
+  // New unit tests to increase branch coverage
+
+  @Test
+  void setLanguage_whenUnregisteredLanguage_returnsError() {
+    // Arrange
+
+    // Act and assert
+    assertThrows(IllegalArgumentException.class, () -> ls.setLanguage(UNREGISTERED_LANGUAGE));
   }
 }
