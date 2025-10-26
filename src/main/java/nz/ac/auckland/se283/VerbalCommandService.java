@@ -11,6 +11,8 @@ public class VerbalCommandService {
 
   private Robot robot = null;
   private boolean isVerbalCommandsOn;
+  private boolean enableInterpretCounter;
+  private int timesInterpreted = 0;
 
   public VerbalCommandService() {
     this.isVerbalCommandsOn = false;
@@ -34,6 +36,10 @@ public class VerbalCommandService {
   }
 
   public String interpret(String commandToInterpret) {
+    if (enableInterpretCounter == true) {
+      this.timesInterpreted++;
+    }
+
     // If null or erroneous input throw exception
     if (commandToInterpret == null
         || commandToInterpret.isEmpty()
@@ -77,5 +83,9 @@ public class VerbalCommandService {
     }
 
     return true;
+  }
+
+  int getTimesInterpreted() {
+    return timesInterpreted;
   }
 }
