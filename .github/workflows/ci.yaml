@@ -20,6 +20,9 @@ jobs:
           java-version: "21"
           distribution: "temurin"
 
+      - name: Make Maven Wrapper executable
+        run: chmod +x mvnw
+
       - name: Build with Maven Wrapper
         run: ./mvnw -B package -DskipTests
 
