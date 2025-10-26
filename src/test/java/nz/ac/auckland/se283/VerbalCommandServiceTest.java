@@ -236,4 +236,38 @@ public class VerbalCommandServiceTest {
     // Assert
     assertEquals(FAIL, result);
   }
+
+  // New unit tests to increase branch coverage:
+
+  @Test
+  void interpret_whenMisinterpretedCommandClarifiedCorrectly_returnsFail() {
+    // Arrange
+    Robot robot = Mockito.mock(Robot.class);
+    VerbalCommandService vcs = new VerbalCommandService(robot);
+    vcs.turnVerbalCommandsOn();
+    Mockito.when(robot.clarify(MISINTERPRETED_COMMAND)).thenReturn(true);
+    Mockito.when(robot.execute(MISINTERPRETED_COMMAND)).thenReturn(false);
+
+    // Act
+    String result = vcs.interpret(MISINTERPRETED_COMMAND);
+
+    // Assert
+    assertEquals(FAIL, result);
+  }
+
+  @Test
+  void interpret_whenMisinterpretedCommandClarifiedCorrectly_returnsPass() {
+    // Arrange
+    Robot robot = Mockito.mock(Robot.class);
+    VerbalCommandService vcs = new VerbalCommandService(robot);
+    vcs.turnVerbalCommandsOn();
+    Mockito.when(robot.clarify(MISINTERPRETED_COMMAND)).thenReturn(true);
+    Mockito.when(robot.execute(MISINTERPRETED_COMMAND)).thenReturn(true);
+
+    // Act
+    String result = vcs.interpret(MISINTERPRETED_COMMAND);
+
+    // Assert
+    assertEquals(PASS, result);
+  }
 }
