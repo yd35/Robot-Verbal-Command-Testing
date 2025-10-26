@@ -270,4 +270,21 @@ public class VerbalCommandServiceTest {
     // Assert
     assertEquals(PASS, result);
   }
+
+  @Test
+  void interpret_whenCalled_incrementsTimesInterpreted() {
+    // Arrange
+    Robot robot = Mockito.mock(Robot.class);
+    VerbalCommandService svc = new VerbalCommandService(robot);
+    svc.turnVerbalCommandsOn();
+    Mockito.when(robot.execute(FORWARDS)).thenReturn(true);
+
+    // Act
+    int countBefore = svc.getTimesInterpreted();
+    svc.interpret(FORWARDS);
+
+    // Assert
+    assertEquals(countBefore + 1, svc.getTimesInterpreted());
+  }
+
 }

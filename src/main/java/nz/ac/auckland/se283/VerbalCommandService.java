@@ -11,7 +11,7 @@ public class VerbalCommandService {
 
   private Robot robot = null;
   private boolean isVerbalCommandsOn;
-  private boolean enableInterpretCounter;
+  private boolean enableInterpretCounter = true;
   private int timesInterpreted = 0;
 
   public VerbalCommandService() {
