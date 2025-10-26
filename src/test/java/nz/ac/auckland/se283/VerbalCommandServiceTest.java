@@ -286,5 +286,4 @@ public class VerbalCommandServiceTest {
     // Assert
     assertEquals(countBefore + 1, svc.getTimesInterpreted());
   }
-
 }
