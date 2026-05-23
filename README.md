@@ -1,41 +1,59 @@
-# SOFTENG 283 - Assignment 4
+# Robot Verbal Command Testing
 
-See Canvas for instructions
+This repository contains a SOFTENG 283 coursework project focused on testing and quality assurance for a robot verbal-command service. The project models service/controller-style logic for interpreting spoken commands, handling language recognition and translation behaviour, and enforcing timeout rules while a robot is listening.
 
-Some useful commands:
+The main portfolio focus is the testing strategy: unit and integration tests exercise command interpretation, language behaviour, error handling, and edge cases. The project uses JUnit 5, Mockito, JaCoCo coverage reporting, PIT mutation testing, Maven, and GitHub Actions CI.
 
-Make sure you are in the project root when running the commands.
+## Features
 
-For Windows OS replace `./mvnw ` with `mvnw.cmd`
+- Interpret robot movement commands such as forwards, backwards, left, and right.
+- Clarify uncertain verbal commands before execution.
+- Support language recognition and translation behaviour.
+- Handle invalid input and listening timeout scenarios.
+- Demonstrate test-driven quality checks with coverage and mutation testing.
 
-### Run code style
+## Tech Stack
+
+- Java
+- Maven / Maven Wrapper
+- JUnit 5
+- Mockito
+- JaCoCo
+- PIT mutation testing
+- GitHub Actions
+
+## Commands
+
+Run unit tests:
+
+```bash
+./mvnw clean test
+```
+
+Generate a JaCoCo coverage report:
+
+```bash
+./mvnw clean test jacoco:report
+```
+
+Run PIT mutation testing:
+
+```bash
+./mvnw clean test pitest:mutationCoverage@run-pitest
+```
+
+Run the course code-style checker, if you have local credentials configured:
 
 ```bash
 ./mvnw clean compile exec:java@style
 ```
 
+On Windows, use `mvnw.cmd` instead of `./mvnw`.
 
-### Run unit tests:
-```bash
-./mvnw clean test
-```
+## Local Configuration
 
+`codestyle.config` is a local-only course tooling configuration file. It is ignored by Git and should never be committed or shared publicly.
 
-### Generate coverage report (JaCoCo):
+## License
 
-```bash
-./mvnw clean test jacoco:report
-open target/site/jacoco/index.html
-```
-
-### Run mutation testing (PIT):
-
-```bash
-./mvnw clean test pitest:mutationCoverage@run-pitest
-open target/pit-reports/index.html
-```
-
-### Submission:
-
-- PDF report max 4 pages
-- your GitHub repo (automatically cloned after the deadline)
+No license is currently provided because this is coursework based on starter/template material.
