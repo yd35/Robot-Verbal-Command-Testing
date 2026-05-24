@@ -1,6 +1,6 @@
 # Robot Verbal Command Testing
 
-This repository contains a SOFTENG 283 coursework project focused on testing and quality assurance for a robot verbal-command service. The project models service/controller-style logic for interpreting spoken commands, handling language recognition and translation behaviour, and enforcing timeout rules while a robot is listening.
+This repository contains an academic project focused on testing and quality assurance for a robot verbal-command service. The project models service/controller-style logic for interpreting spoken commands, handling language recognition and translation behaviour, and enforcing timeout rules while a robot is listening.
 
 The main portfolio focus is the testing strategy: unit and integration tests exercise command interpretation, language behaviour, error handling, and edge cases. The project uses JUnit 5, Mockito, JaCoCo coverage reporting, PIT mutation testing, Maven, and GitHub Actions CI.
 
