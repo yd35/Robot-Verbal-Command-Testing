@@ -1,16 +1,16 @@
 # Robot Verbal Command Testing
 
-This repository contains an academic project focused on testing and quality assurance for a robot verbal-command service. The project models service/controller-style logic for interpreting spoken commands, handling language recognition and translation behaviour, and enforcing timeout rules while a robot is listening.
+Robot Verbal Command Testing is an academic Java project focused on testing and quality assurance for a robot command service. The project models how a robot listens for spoken instructions, interprets movement commands, handles language-related behaviour, and responds to invalid input or timeout scenarios.
 
-The main portfolio focus is the testing strategy: unit and integration tests exercise command interpretation, language behaviour, error handling, and edge cases. The project uses JUnit 5, Mockito, JaCoCo coverage reporting, PIT mutation testing, Maven, and GitHub Actions CI.
+The main focus of this repository is the testing approach. It uses unit testing, mocking, coverage reporting, mutation testing, and CI to check that the command-handling logic behaves reliably across normal and edge-case scenarios.
 
 ## Features
 
-- Interpret robot movement commands such as forwards, backwards, left, and right.
-- Clarify uncertain verbal commands before execution.
-- Support language recognition and translation behaviour.
-- Handle invalid input and listening timeout scenarios.
-- Demonstrate test-driven quality checks with coverage and mutation testing.
+- Interprets robot movement commands such as forwards, backwards, left, and right
+- Handles unclear or invalid verbal commands
+- Supports language recognition and translation-related behaviour
+- Enforces timeout rules while the robot is listening
+- Tests command logic using unit, integration, coverage, and mutation testing
 
 ## Tech Stack
 
@@ -24,7 +24,7 @@ The main portfolio focus is the testing strategy: unit and integration tests exe
 
 ## Commands
 
-Run unit tests:
+Run the test suite:
 
 ```bash
 ./mvnw clean test
@@ -42,18 +42,14 @@ Run PIT mutation testing:
 ./mvnw clean test pitest:mutationCoverage@run-pitest
 ```
 
-Run the course code-style checker, if you have local credentials configured:
-
-```bash
-./mvnw clean compile exec:java@style
-```
-
 On Windows, use `mvnw.cmd` instead of `./mvnw`.
 
 ## Local Configuration
 
-`codestyle.config` is a local-only course tooling configuration file. It is ignored by Git and should never be committed or shared publicly.
+`codestyle.config` is a local-only configuration file used for course tooling. It is ignored by Git and should not be committed or shared publicly.
 
 ## License
 
-No license is currently provided because this is coursework based on starter/template material.
+No open-source license is currently provided for this repository.
+
+This project is shared publicly for portfolio and educational viewing purposes only. It includes academic project structure and starter/template material, so please do not copy, redistribute, or reuse the code without permission.
